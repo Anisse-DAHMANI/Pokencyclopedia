@@ -1,0 +1,164 @@
+.type{
+    border-radius: 20px; 
+    -moz-border-radius: 20px; 
+    -webkit-border-radius: 20px; 
+    -khtml-border-radius: 20px; 
+    -icab-border-radius: 20px; 
+    -o-border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.normal{
+    background:#A8A878; border: 1px solid #6D6D4E
+}
+
+.normal::after{
+    content: "Normal";
+}
+
+.fire{
+    background:#F08030; border: 1px solid #9C531F
+}
+
+.fire::after{
+    content: "Fire";
+}
+
+.fighting{
+    background:#C03028; border: 1px solid #7D1F1A
+}
+
+.fighting::after{
+    content: "Fighting"
+}
+
+.water{
+    background:#6890F0; border: 1px solid #445E9C
+}
+
+.water::after{
+    content: "Water"
+}
+
+.flying{
+    background:#A890F0; border: 1px solid #6D5E9C
+}
+
+.flying::after{
+    content: "Flying";
+}
+
+.grass{
+    background:#78C850; border: 1px solid #4E8234
+}
+
+.grass::after{
+    content: "Grass"
+}
+
+.poison{
+    background:#A040A0; border: 1px solid #682A68
+}
+
+.poison::after{
+    content: "Poison";
+}
+
+.electric{
+    background:#F8D030; border: 1px solid #A1871F
+}
+
+.electric::after{
+    content: "Electric";
+}
+
+.ground{
+    background:#E0C068; border: 1px solid #927D44
+}
+
+.ground::after{
+    content: "Ground";
+}
+
+.psychic{
+    background:#F85888; border: 1px solid #A13959
+}
+
+.psychic::after{
+    content: "Psychic";
+}
+
+.rock{
+    background:#B8A038; border: 1px solid #786824
+}
+
+.rock::after{
+    content: "Rock";
+}
+
+.ice{
+    background:#98D8D8; border: 1px solid #638D8D
+}
+
+.ice::after{
+    content: "Ice"
+}
+
+.bug{
+    background:#A8B820; border: 1px solid #6D7815
+}
+
+.bug::after{
+    content: "Bug"
+}
+
+.dragon{
+    background:#7038F8; border: 1px solid #4924A1
+}
+
+.dragon::after{
+    content: "Dragon";
+}
+
+.ghost{
+    background:#705898; border: 1px solid #493963
+}
+
+.ghost::after{
+    content: "Ghost";
+}
+
+.dark{
+    background:#705848; border: 1px solid #49392F
+}
+
+.dark::after{
+    content: "Dark";
+}
+
+.steel{
+    background:#B8B8D0; border: 1px solid #787887
+}
+
+.steel::after{
+    content: "Steel";
+}
+
+.fairy{
+    background:#EE99AC; border: 1px solid #9B6470
+}
+
+.fairy::after{
+    content: "Fairy";
+}
+
+.nulltype{
+    background:#68A090; border: 1px solid #44685E
+}
+
+.nulltype::after{
+    content: "???";
+}
