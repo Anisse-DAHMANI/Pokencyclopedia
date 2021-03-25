@@ -40,8 +40,9 @@ Promise.all(urls.map(url =>
             }
         });
 
-        document.getElementById("app").classList.remove("hide");
         document.getElementsByClassName("lds-ring")[0].classList.add("hide");
+        document.getElementById("app").classList.remove("hide");
+        document.getElementById("inputPokemon").classList.remove("hide");
         
     })
 
@@ -90,7 +91,6 @@ Vue.component('my-pokemon', {
         },
 
         getImgUrl() {
-            console.log(this.pokemon.urlImage);
             return this.pokemon.urlImage;
         }
     }

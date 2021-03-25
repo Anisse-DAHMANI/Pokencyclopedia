@@ -4,14 +4,17 @@
 <title>Page Title</title>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="assets/vendor/materialize/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/types.css">
 
 <!-- Compiled and minified JavaScript -->
-<script src="assets/vendor/materialize/css/materialize.min.js"></script>
 <script src="assets/vendor/VueJS/vue.min.js"></script>
-<script src="assets/vendor/requireJS/requirejs.js"></script>
-<script type="module" src="assets/js/learn_api.js"></script>
+<script type="module" src="assets/js/pokedex/modulePokedex.js"></script>
+<script type="module" src="assets/js/pokedex/controllerPokedex.js"></script>
+<script type="module" src="assets/js/pokedex/viewPokedex.js"></script>
+<script type="module" src="assets/js/pokedex/pokemon.js"></script>
 
 </head>
 <body>
@@ -31,25 +34,110 @@
     <br>
 
 
-    <div class="lds-ring">
-        <div>
+    <div class="container hide" id="card-pokemon-detail">
+        <div id="card-pokemon-etc"class="card-panel center col s12">
+          <div class="row s6">
+            <h3>Charmander</h3>
+          <p class="row s12">
+            <label>
+              <input id="checkboxShiny" type="checkbox" class="filled-in"/>
+              <span>Shiny</span>
+            </label>
+          </p>
+          <img id="pokemonImage" src="assets\images\example_card_pokemon.png" class="row s12" style="width: 15%;" alt="pas de photo mdr">
+          <h5 id="idPokemon" class="row s12" style="margin-top: 0px;">#4</h5>
+          </div>
+          
+          <div style="text-decoration-color: white;" class="card-panel teal row s4"">
+            <div class="col s6">
+              <div class="row s4">
+                <h6 id="types" class="left"></h6>
+              </div>
+              <div class="row s2">
+                <h6 id="height" class="left">Height : ###m</h6>
+              </div>
+              <div class="row s2">
+                <h6 id="weight" class="left">Weight : ###kg</h6>
+              </div>
+              <div class="row s2">
+                <h6 id="habitat" class="left">Habitat :</h6>
+              </div>
+              <div class="row s2">
+                <h6 id="shape" class="left">Shape : </h6>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="row s2">
+                <h4 class="row s6 left">Description</h4>
+                <div style="overflow-x: hidden; overflow-y: scroll;height: 100px; background-color: skyblue; border: tomato solid 3px;" class="row s6 left">
+                  <p id="descriptionPokemon" style="width: 95%;text-align: left;"></p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <div>
-
+          <div class="row s4">
+            <div class="row s6">
+              <h4>Statistics</h4>
+            </div>
+            <div class="row s6" style="display: flex;justify-content: center;margin-left: auto;margin-right: auto;">
+              <div class="skills-bars">
+                <div class="skills-item">
+                    <span id="hp" data-percent="75" class="percent"></span>
+                    <p>Health</p>
+                </div>
+                <div class="skills-item">
+                    <span id="attack" data-percent="70" class="percent"></span>
+                    <p>Attack</p>
+                </div>
+                <div class="skills-item">
+                    <span id="defense" data-percent="90" class="percent"></span>
+                    <p>Defense</p>
+                </div>
+                <div class="skills-item">
+                    <span id="attack_special" data-percent="60" class="percent"></span>
+                    <p>Attack Special</p>
+                </div>
+                <div class="skills-item">
+                    <span id="defense_special" data-percent="30" class="percent"></span>
+                    <p>Defense Special</p>
+                </div>
+                <div class="skills-item">
+                  <span id="speed" data-percent="30" class="percent"></span>
+                  <p>Speed</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 
 
-    <div class="container hide" id="app">
+    <div id="loading" class="preloader-wrapper big active col">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="inputPokemon" class="row hide" style="width: 50%;">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="inputSearch" type="text" class="validate">
+        <label for="inputSearch">Pokemon's name to search</label>
+      </div>
+    </div>
+
+
+    <div class="container" id="app">
         <my-pokemon v-for="item in pokemons" v-bind:pokemon="item" v-bind:key="item.id"></my-pokemon>
     </div>
 
+    <script src="assets/vendor/materialize/js/materialize.js"></script>
 </body>
 </html>
