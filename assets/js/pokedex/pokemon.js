@@ -14,24 +14,27 @@ class PokemonMin{ //Pokemon sans détail (histoire d'optimiser RAM (éviter de p
     }
 }
 
+//MODELE - Ici, on stocke ici les pokémons obtenus ET un pokémon selectionné par fetch, clic grâce au contrôleur.
 class Pokemons{
-    data_pokemon;
-    pokemonSelected;
+    data_pokemon; //Pour les pokémons de PokemonMin pour faire les minis-cartes.
+    pokemonSelected; //Pour le pokémon sélectionné
     constructor(data){
-        this.data_pokemon = data;
-        this.pokemonSelected = null;
+        this.data_pokemon = data; //Stocke les pokémons de PokemonMin
+        this.pokemonSelected = null; //Parce qu'au début, on n'a pas encore selectionné.
     }
 
-    data_filter(value){
+    data_filter(value){ //retourne les pokémons dont son nom qui est partiellement égal au input de notre site.
         return this.data_pokemon.filter(pokemon => pokemon.name.toUpperCase().includes(value.toUpperCase()))
     }
 
     setPokemonSelected(pokemon){
-        this.pokemonSelected=pokemon;
+        this.pokemonSelected=pokemon; //Stocke/Change le pokémon selectionné
     }
 
 }
 
+
+//Pas besoin d'expliquer MAIS ce classe est fait POUR la gestion d'un pokémon selectionné.
 class Pokemon{
     id;
     name;
@@ -59,4 +62,5 @@ class Pokemon{
     }
 }
 
+//Export pour que les fonctions de la module peut transformer les objets en PokemonMin ou Pokemon. C'est pour que le contrôleur puisse créer une modèle en utiliser "Pokemons" aussi.
 export{PokemonMin, Pokemons, Pokemon};

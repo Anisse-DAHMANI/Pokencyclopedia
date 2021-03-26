@@ -20,15 +20,13 @@
 <body>
     <nav class="nav-extended">
         <div class="nav-wrapper" >  
-          <a href="#" class="brand-logo center"><img src="assets/images/logo_Pokencyclopedia.png" height="150px" alt="Logo"> </a>
+          <a href="index.html" class="brand-logo center"><img src="assets/images/logo_Pokencyclopedia.png" height="150px" alt="Logo"> </a>
           </ul>
         </div>
     </nav>
     <div id="menu" class="center">
+      <a href="index.html" class="waves-effect waves-light btn-large">Accueil</a>
       <a class="waves-effect waves-light btn-large">Pokedex</a>
-      <a class="waves-effect waves-light btn-large">Items</a>
-      <a class="waves-effect waves-light btn-large">Moves</a>
-      <a class="waves-effect waves-light btn-large">Others</a>
     </div>
 
     <br>
@@ -37,18 +35,33 @@
     <div class="container hide" id="card-pokemon-detail">
         <div id="card-pokemon-etc"class="card-panel center col s12">
           <div class="row s6">
-            <h3>Charmander</h3>
-          <p class="row s12">
+
+            <div class="row s1 right">
+              <a id="close" class="waves-effect waves-light btn">close</a>
+            </div>
+
+            <h3 class="row s3" id="namePokemon"></h3>
+          <p class="row s2">
             <label>
               <input id="checkboxShiny" type="checkbox" class="filled-in"/>
               <span>Shiny</span>
             </label>
           </p>
-          <img id="pokemonImage" src="assets\images\example_card_pokemon.png" class="row s12" style="width: 15%;" alt="pas de photo mdr">
-          <h5 id="idPokemon" class="row s12" style="margin-top: 0px;">#4</h5>
+          <div class="row s4">
+            <div class="col s3 left">
+              <a id="precedent" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">keyboard_arrow_left</i></a>
+            </div>
+            <div class="col s6 center">
+              <img id="pokemonImage" src="" style="width: 30%" alt="Chargement de photo">
+            </div>
+            <div class="col s3 right">
+              <a id="suivant" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">keyboard_arrow_right</i></a>
+            </div>
+          </div>
+          <h5 id="idPokemon" class="row s2" style="margin-top: 0px;">#</h5>
           </div>
           
-          <div style="text-decoration-color: white;" class="card-panel teal row s4"">
+          <div class="card-panel row s4" style="border: teal solid 3px;background-color: lightcoral;">
             <div class="col s6">
               <div class="row s4">
                 <h6 id="types" class="left"></h6>
@@ -68,8 +81,8 @@
             </div>
             <div class="col s6">
               <div class="row s2">
-                <h4 class="row s6 left">Description</h4>
-                <div style="overflow-x: hidden; overflow-y: scroll;height: 100px; background-color: skyblue; border: tomato solid 3px;" class="row s6 left">
+                <h4 class="row s6 left">Description :</h4>
+                <div style="overflow-x: hidden; overflow-y: scroll;height: 100px; background-color:lightgray; border:gray solid 1px;" class="row s6 left">
                   <p id="descriptionPokemon" style="width: 95%;text-align: left;"></p>
                 </div>
               </div>
@@ -113,23 +126,29 @@
     </div>
 
 
-    <div id="loading" class="preloader-wrapper big active col">
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+    <div class="container" style="width: 50%;">
+      <div id="loading" class="preloader-wrapper big active row s6">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="inputPokemon" class="row hide" style="width: 50%;">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-        <input id="inputSearch" type="text" class="validate">
-        <label for="inputSearch">Pokemon's name to search</label>
+  
+  
+      <div id="inputPokemon" class="row s6 center" style="width: 100%;">
+        <div class="input-field col s7" style="margin-top: 0px;">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="inputSearch" type="text" class="validate">
+          <label for="inputSearch">Pokemon's name to search</label>
+        </div>
+        <div id="buttonSearch" class="col s5">
+          <a class="waves-effect waves-light btn"><i class="material-icons right">search</i>Search</a>
+        </div>
       </div>
     </div>
 

@@ -39,12 +39,16 @@ nav.nav-extended{
   right: 0;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
+  margin-top: 100px;
 }
+
+
 
 .hide{
   display: none;
 }
+
+
 
 #card-pokemon-detail{
   width: 75%;
@@ -67,6 +71,8 @@ nav.nav-extended{
 
 #card-pokemon-detail #card-pokemon-etc{
   width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .skills-bars {
