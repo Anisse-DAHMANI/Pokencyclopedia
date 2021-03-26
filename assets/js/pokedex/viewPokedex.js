@@ -77,7 +77,7 @@ class ViewPokedex{
                     types_object.push({type:t});
                 });
                 return {
-                    types : types_object
+                    types : types_object //retourne l'object "types" avec l'array.
                 }},
         
             methods : {
@@ -136,7 +136,7 @@ class ViewPokedex{
         pokemon.types.forEach(type => str_type+= "<span class=\"type "+type+"\"></span>");
         document.querySelector("#types").innerHTML = str_type;
 
-        //CHANGEMENT
+        //CHANGEMENT ET AFFICHAGE DES ATTRIBUTS EN VUE (avec DOM).
         document.querySelector("#namePokemon").innerHTML = pokemon.name;
         document.querySelector("#idPokemon").innerHTML = "#" + pokemon.id;
         document.querySelector("#descriptionPokemon").innerHTML = pokemon.description;
@@ -152,18 +152,18 @@ class ViewPokedex{
 
     //Change Shiny en Normal ou bien Normal en Shiny.
     changeShinyOrNormal(urlImage){
-        document.querySelector("#pokemonImage").setAttribute("src", urlImage)
+        document.querySelector("#pokemonImage").setAttribute("src", urlImage) //Change l'image par url dans le but d'afficher le shiny/normal
     }
 
     //Ajouter l'écouteur de clic/entrer, dans le cas, on récupere les pokémons grâce à le retour de handler. 
     bindUpdatePokemons(handler){
-        this.inputSearch.addEventListener("keyup", (event) => {
+        this.inputSearch.addEventListener("keyup", (event) => { //Si appuyer "entrer" alors faire
             if(event.keyCode === 13 ) {
                 this.updatePokemons(handler(this.inputSearch));
             }
 
         });
-        this.buttonSearch.addEventListener("click", (event) =>{
+        this.buttonSearch.addEventListener("click", (event) =>{ //Si clic sur le bouton "Search" alors faire
             this.updatePokemons(handler(this.inputSearch));
         })
 
@@ -171,30 +171,29 @@ class ViewPokedex{
 
     bindChangeShinyOrNormal(handler){
         this.checkBoxShiny.addEventListener("click", (event)=>{
-            this.changeShinyOrNormal(handler(this.checkBoxShiny.checked));
+            this.changeShinyOrNormal(handler(this.checkBoxShiny.checked)); // Activer/Déactiver l'image Shiny
         })
     }
 
     updatePokemons(pokemons){
-        this.app.pokemons = pokemons;
+        this.app.pokemons = pokemons; //Mise à jour de données Pokemons en Vue.
     }
 
-    bindSelectPokemon(handler){
-        //this.handlerGetPokemon = (id) => {return handler(id)}
+    bindSelectPokemon(handler){  //Modifie la fonction handlerGetPokemon pour que la fonction "changeCard" puisse appeller la fonction de Controleur après un event "afficher".
         this.handlerGetPokemon = (id) => {return handler(id)};
     }
 
-    bindnextOrPrecedent(handler){
+    bindnextOrPrecedent(handler){ //Passe le pokémon à l'autre pokémon par suivant ou précedent à l'aide d'un 1 nombre.
         document.querySelector("#suivant").addEventListener("click", (event) =>{
-            handler(1);  
+            handler(1);  //Suivant !
         });
 
-        document.querySelector("#precedent").addEventListener("click", (event) =>{
-            handler(-1);  
+        document.querySelector("#precedent").addEventListener("click", (event) =>{ 
+            handler(-1); //Precedent !
         })
     }
 
-    handlerGetPokemon(){
+    handlerGetPokemon(){ //Déclaration de fonction pour rien.
     }
 
 }
